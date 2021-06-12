@@ -50,6 +50,10 @@ public class ComputerControls : MonoBehaviour {
 		}
 	}
 
+	void OnReset() {
+		GameObject.Find("Startup").GetComponent<Startup>().ResetLevel();
+	}
+
 	void FixedUpdate() {
 		bool firing = fireAction.phase == InputActionPhase.Started;
 		if(firing) {
