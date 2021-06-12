@@ -3,6 +3,12 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Target : MonoBehaviour {
+	[Tooltip("Emitted when the machine is plugged into by the player.")]
+	public UnityEvent onPlug;
+
+	[Tooltip("Emitted when the machine is unplugged from by the player.")]
+	public UnityEvent onUnplug;
+
 	[Tooltip("Emitted when the machine is interacted with by the player.")]
 	public UnityEvent onInteract;
 
@@ -35,6 +41,9 @@ public class Target : MonoBehaviour {
 			// connect to a second target if this target moves close to the
 			// other.
 			projectile.tag = null;
+
+			// Notify listeners.
+			onPlug.Invoke();
 		}
 	}
 }
