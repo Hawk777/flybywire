@@ -10,6 +10,10 @@ public class ComputerControls : MonoBehaviour {
 	public float forceScale = 1.0f;
 
 	[Range(0.0001f, 1000.0f)]
+	[Tooltip("The minimum limit of force applied when firing.")]
+	public float forceMin = 1.0f;
+
+	[Range(0.0001f, 1000.0f)]
 	[Tooltip("The maximum limit of force applied when firing.")]
 	public float forceMax = 10.0f;
 
@@ -79,7 +83,11 @@ public class ComputerControls : MonoBehaviour {
 				projectileBody.angularVelocity = myBody.angularVelocity;
 				projectile.GetComponent<Projectile>().launcher = this;
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
-				projectileBody.AddForce(Vector2.ClampMagnitude(aim * forceScale, forceMax), ForceMode2D.Impulse);
+				Vector2 forceVector = Vector2.ClampMagnitude(aim * forceScale, forceMax);
+				if (forceVector.magnitude < forceMin) {
+					forceVector = forceVector.normalized * forceMin;
+				}
+				projectileBody.AddForce(forceVector, ForceMode2D.Impulse);
 			} else if(spring != null) {
 				float oldDist = spring.distance;
 				float newDist = Mathf.Max(oldDist - cableRetractSpeed, minCableLength);

@@ -271,7 +271,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4ee4c27a53f34d29a7478cc61d0d319, type: 3}
   m_Name: 
@@ -306,7 +306,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -330,7 +330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 1, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2478,6 +2478,14 @@ PrefabInstance:
     - target: {fileID: 4451498775536524214, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
+      propertyPath: forceMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
+      propertyPath: forceScale
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: projectilePrefab
