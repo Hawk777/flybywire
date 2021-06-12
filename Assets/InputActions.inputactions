@@ -22,9 +22,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Interact",
+                    "name": "Unplug",
                     "type": "Button",
                     "id": "b25c743d-879f-4e10-9377-6846a31db999",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "b2b3d18c-e979-4bee-b862-0d7e6fa495ee",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -82,13 +90,35 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Interact",
+                    "action": "Unplug",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "bfc0ff78-4253-4e5c-8a0e-bb2f3fccddc8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Unplug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92f88c38-a6e7-4d47-982a-75eb55e9e521",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9da2250-fdff-47b6-8b2c-d78939e048f2",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
