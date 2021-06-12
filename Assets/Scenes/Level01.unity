@@ -1922,6 +1922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Firework Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 9189698439618071622, guid: 8c8deffd41d8ed9448dd2fb7a3b68550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9189698439618071625, guid: 8c8deffd41d8ed9448dd2fb7a3b68550, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1936,11 +1940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9189698439618071625, guid: 8c8deffd41d8ed9448dd2fb7a3b68550, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: 38.5
       objectReference: {fileID: 0}
     - target: {fileID: 9189698439618071625, guid: 8c8deffd41d8ed9448dd2fb7a3b68550, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 9189698439618071625, guid: 8c8deffd41d8ed9448dd2fb7a3b68550, type: 3}
       propertyPath: m_LocalPosition.z
