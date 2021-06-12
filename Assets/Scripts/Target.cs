@@ -9,6 +9,7 @@ public class Target : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		GameObject projectile = collision.gameObject;
 		if(projectile.tag == "Projectile") {
+			// Get the player that launched the projectile.
 			ComputerControls launcher = projectile.GetComponent<Projectile>().launcher;
 
 			// The projectile should stick, perfectly, to the target, and move
@@ -17,13 +18,14 @@ public class Target : MonoBehaviour {
 			Destroy(projectile.GetComponent<Rigidbody2D>());
 			projectile.GetComponent<Transform>().SetParent(GetComponent<Transform>(), true);
 
-			// Create the cable between the launcher and the projectile.
-			SpringJoint2D spring = launcher.gameObject.AddComponent<SpringJoint2D>();
+			// Create the cable between the target and the projectile.
+			SpringJoint2D spring = gameObject.AddComponent<SpringJoint2D>();
 			spring.autoConfigureDistance = true;
 			spring.dampingRatio = 0f;
 			spring.frequency = 1f;
-			spring.connectedBody = GetComponent<Rigidbody2D>();
+			spring.connectedBody = launcher.GetComponent<Rigidbody2D>();
 			spring.enableCollision = true;
+			spring.autoConfigureDistance = false;
 			launcher.spring = spring;
 
 			// Record the object that was hit.

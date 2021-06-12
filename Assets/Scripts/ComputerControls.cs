@@ -68,10 +68,6 @@ public class ComputerControls : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(spring != null) {
-			spring.autoConfigureDistance = false;
-		}
-
 		bool firing = fireAction.phase == InputActionPhase.Started;
 		if(firing) {
 			if(projectile == null) {
