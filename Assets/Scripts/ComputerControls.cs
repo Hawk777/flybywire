@@ -6,16 +6,12 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Transform))]
 public class ComputerControls : MonoBehaviour {
 	[Range(0.0001f, 10.0f)]
-	[Tooltip("The scaling factor from mouse distance to force applied.")]
+	[Tooltip("The scaling factor from aiming vector (which is magnitude ≤1) to force applied.")]
 	public float forceScale = 1.0f;
 
 	[Range(0.0001f, 1000.0f)]
 	[Tooltip("The minimum limit of force applied when firing.")]
 	public float forceMin = 1.0f;
-
-	[Range(0.0001f, 1000.0f)]
-	[Tooltip("The maximum limit of force applied when firing.")]
-	public float forceMax = 10.0f;
 
 	[Tooltip("The projectile prefab to spawn when launching a projectile.")]
 	public GameObject projectilePrefab;
@@ -42,7 +38,21 @@ public class ComputerControls : MonoBehaviour {
 	}
 
 	void OnAim(InputValue inputValue) {
-		aim = Camera.main.ScreenToWorldPoint(inputValue.Get<Vector2>()) - GetComponent<Transform>().position;
+		// Get the distance from the computer to the mouse pointer.
+		Camera cam = Camera.main;
+		Vector2 worldDistance = cam.ScreenToWorldPoint(inputValue.Get<Vector2>()) - GetComponent<Transform>().position;
+
+		// Scale so that camera zoom does not affect the vector length; putting
+		// the mouse at the top of the screen while the computer is in the
+		// exact middle will result in a vector of length 1 no matter the
+		// camera zoom level.
+		Vector2 scaled = worldDistance / cam.orthographicSize;
+
+		// The aim vector could still be of magnitude >1 for a two reasons: (1)
+		// the computer isn’t in the exact middle of the screen, or (2) the
+		// player is aiming left or right, and their screen is wider than it is
+		// high. To accommodate those cases, clamp.
+		aim = Vector2.ClampMagnitude(scaled, 1f);
 	}
 
 	void OnInteract() {
@@ -82,7 +92,7 @@ public class ComputerControls : MonoBehaviour {
 				projectileBody.angularVelocity = myBody.angularVelocity;
 				projectile.GetComponent<Projectile>().launcher = this;
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
-				Vector2 forceVector = Vector2.ClampMagnitude(aim * forceScale, forceMax);
+				Vector2 forceVector = aim * forceScale;
 				if (forceVector.sqrMagnitude < forceMin * forceMin) {
 					forceVector = forceVector.normalized * forceMin;
 				}
