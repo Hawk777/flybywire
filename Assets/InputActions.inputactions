@@ -6,9 +6,17 @@
             "id": "c53bb006-cef2-481d-965b-6249cf211ee7",
             "actions": [
                 {
-                    "name": "Aim",
+                    "name": "AimScreen",
                     "type": "Value",
                     "id": "75186dba-c241-4765-b1d6-52e20668d75a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "AimAbsolute",
+                    "type": "Value",
+                    "id": "6d25cd4a-10e0-4f1c-b818-6914801ffba2",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -54,18 +62,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Aim",
+                    "action": "AimScreen",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -154,6 +151,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "AimAbsolute",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

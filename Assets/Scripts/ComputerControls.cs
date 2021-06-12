@@ -37,7 +37,7 @@ public class ComputerControls : MonoBehaviour {
 		fireAction = GetComponent<PlayerInput>().actions["Fire"];
 	}
 
-	void OnAim(InputValue inputValue) {
+	void OnAimScreen(InputValue inputValue) {
 		// Get the distance from the computer to the mouse pointer.
 		Camera cam = Camera.main;
 		Vector2 worldDistance = cam.ScreenToWorldPoint(inputValue.Get<Vector2>()) - GetComponent<Transform>().position;
@@ -53,6 +53,10 @@ public class ComputerControls : MonoBehaviour {
 		// player is aiming left or right, and their screen is wider than it is
 		// high. To accommodate those cases, clamp.
 		aim = Vector2.ClampMagnitude(scaled, 1f);
+	}
+
+	void OnAimAbsolute(InputValue inputValue) {
+		aim = inputValue.Get<Vector2>();
 	}
 
 	void OnInteract() {
