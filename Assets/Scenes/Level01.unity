@@ -2999,7 +2999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505941014911368680, guid: 222262157524fcf4dad06628128d0918, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.31
+      value: -7.06
       objectReference: {fileID: 0}
     - target: {fileID: 1505941014911368680, guid: 222262157524fcf4dad06628128d0918, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3040,6 +3040,18 @@ PrefabInstance:
     - target: {fileID: 3709354008792534345, guid: 222262157524fcf4dad06628128d0918, type: 3}
       propertyPath: m_Name
       value: Printer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857582984003423292, guid: 222262157524fcf4dad06628128d0918, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857582984003423292, guid: 222262157524fcf4dad06628128d0918, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: bfa2a6952d425a64596da12e0cf4a309, type: 2}
+    - target: {fileID: 6857582984003423292, guid: 222262157524fcf4dad06628128d0918, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 222262157524fcf4dad06628128d0918, type: 3}
