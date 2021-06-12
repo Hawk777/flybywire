@@ -3010,12 +3010,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'L-Mouse: Shoot cord
+  m_Text: 'R-Mouse: Unjoin
 
 
     While joined:
 
-    L-Mouse: Pull'
+    Space: Turn on/off'
 --- !u!222 &1333900420
 CanvasRenderer:
   m_ObjectHideFlags: 0
