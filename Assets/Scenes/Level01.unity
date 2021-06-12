@@ -743,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447094, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447094, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3104,8 +3104,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
+      propertyPath: forceMax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: forceMin
-      value: 5
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4451498775536524217, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: forceScale
@@ -3256,12 +3260,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'R-Mouse: Unjoin
+  m_Text: 'While joined:
 
+    R-Mouse: Unjoin
 
-    While joined:
+    L-Mouse: Pull
 
-    Space: Turn on/off'
+    Space: Turn
+    on/off'
 --- !u!222 &1333900420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3597,12 +3603,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'L-Mouse: Shoot cord
+  m_Text: 'R: Reset
 
-
-    While joined:
-
-    L-Mouse: Pull'
+    L-Mouse: Join'
 --- !u!222 &1874436641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4184,7 +4187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505941014911368680, guid: 222262157524fcf4dad06628128d0918, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9
+      value: 5.984
       objectReference: {fileID: 0}
     - target: {fileID: 1505941014911368680, guid: 222262157524fcf4dad06628128d0918, type: 3}
       propertyPath: m_LocalPosition.y

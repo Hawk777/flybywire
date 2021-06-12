@@ -7,6 +7,8 @@ public class DeathCollider : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		Debug.Log("Death");
+		if (collision.gameObject.tag == "Player") {
+			Debug.Log("Death");
+		}
 	}
 }

@@ -7,6 +7,8 @@ public class WinCollider : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		Debug.Log("Win");
+		if (collision.gameObject.tag == "Player") {
+			Debug.Log("Win");
+		}
 	}
 }
