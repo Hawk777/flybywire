@@ -24,10 +24,6 @@ public class HorizontalKinematicMover : MonoBehaviour {
 	[Tooltip("Emitted when the machine arrives at its target.")]
 	public UnityEvent onArrived;
 
-	public void SetAcceleration(float accel) {
-		acceleration = accel;
-	}
-
 	public void SetMaxSpeed(float max) {
 		maxSpeed = max;
 	}

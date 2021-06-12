@@ -82,6 +82,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &696092540840060819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096530447471258096}
+  m_Layer: 0
+  m_Name: Overspeed patrol point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096530447471258096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696092540840060819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5422261024504565414}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778806994842489377
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,8 @@ Transform:
   - {fileID: 579339395666908856}
   - {fileID: 6918344943002680781}
   - {fileID: 1693326702000228789}
+  - {fileID: 2079221408287350186}
+  - {fileID: 1096530447471258096}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693326702000228789}
   m_Layer: 0
-  m_Name: Patrol point 2
+  m_Name: Normal patrol point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6918344943002680781}
   m_Layer: 0
-  m_Name: Patrol point 1
+  m_Name: Normal patrol point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +336,7 @@ GameObject:
   - component: {fileID: 7180065645918496421}
   - component: {fileID: 8849792181256804537}
   - component: {fileID: 6113964339697406704}
-  - component: {fileID: 3815629347137318616}
+  - component: {fileID: 6425834038492471838}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -465,18 +497,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6113964339697406704}
         m_TargetAssemblyTypeName: HorizontalKinematicMover, Assembly-CSharp
-        m_MethodName: SetAcceleration
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6113964339697406704}
-        m_TargetAssemblyTypeName: HorizontalKinematicMover, Assembly-CSharp
         m_MethodName: SetMaxSpeed
         m_Mode: 4
         m_Arguments:
@@ -484,6 +504,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 4
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6425834038492471838}
+        m_TargetAssemblyTypeName: Patroller, Assembly-CSharp
+        m_MethodName: SetPatrolPointSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -504,7 +536,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6113964339697406704}
         m_TargetAssemblyTypeName: HorizontalKinematicMover, Assembly-CSharp
-        m_MethodName: SetAcceleration
+        m_MethodName: SetMaxSpeed
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -514,15 +546,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6113964339697406704}
-        m_TargetAssemblyTypeName: HorizontalKinematicMover, Assembly-CSharp
-        m_MethodName: SetMaxSpeed
-        m_Mode: 4
+      - m_Target: {fileID: 6425834038492471838}
+        m_TargetAssemblyTypeName: Patroller, Assembly-CSharp
+        m_MethodName: SetPatrolPointSet
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 4
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -562,7 +594,7 @@ MonoBehaviour:
   onArrived:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3815629347137318616}
+      - m_Target: {fileID: 6425834038492471838}
         m_TargetAssemblyTypeName: Patroller, Assembly-CSharp
         m_MethodName: OnArrived
         m_Mode: 1
@@ -574,7 +606,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3815629347137318616
+--- !u!114 &6425834038492471838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -587,8 +619,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {fileID: 6918344943002680781}
-  - {fileID: 1693326702000228789}
+  - points:
+    - {fileID: 6918344943002680781}
+    - {fileID: 1693326702000228789}
+  - points:
+    - {fileID: 2079221408287350186}
+    - {fileID: 1096530447471258096}
+  currentSet: 0
   mirrorTransform: {fileID: 2759462038379672160}
 --- !u!1 &5137187106300885684
 GameObject:
@@ -702,6 +739,36 @@ Transform:
   - {fileID: 6631682098560681717}
   m_Father: {fileID: 427192364939444950}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5545222985587538367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079221408287350186}
+  m_Layer: 0
+  m_Name: Overspeed patrol point 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079221408287350186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545222985587538367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5422261024504565414}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5966780963489947229
 GameObject:
