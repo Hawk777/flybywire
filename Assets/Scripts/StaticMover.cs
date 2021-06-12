@@ -1,33 +1,43 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(Toggleable))]
 public class StaticMover : MonoBehaviour {
-	[Tooltip("The distance the machine moves when turned on.")]
-	public Vector2 moveDistance;
+	[Tooltip("The object the machine moves to when turned on.")]
+	public Transform onPosition;
 
-	[Tooltip("The time the machine takes to move between positions, in seconds.")]
+	[Tooltip("The speed of the machine’s movement, in units per second.")]
 	[Range(0.0f, 1000.0f)]
-	public float moveTime;
+	public float speed = 1f;
 
-	private Vector2 offPosition, onPosition;
-	private float moveProgress;
+	[Tooltip("Emitted when the machine starts moving away from the off position.")]
+	public UnityEvent turnedOn;
+
+	[Tooltip("Emitted when the machine reaches the off position and stops moving.")]
+	public UnityEvent turnedOff;
+
+	private bool wasOn;
+	private Vector2 offPosition;
 
 	void Start() {
-		Transform t = GetComponent<Transform>();
-		offPosition = t.position;
-		onPosition = offPosition + moveDistance;
-		UpdatePosition();
+		wasOn = false;
+		offPosition = GetComponent<Transform>().position;
 	}
 
 	void Update() {
-		moveProgress = Mathf.Clamp01(moveProgress + (GetComponent<Toggleable>().isOn ? 1f : -1f) * Time.deltaTime / moveTime);
-		UpdatePosition();
-	}
-
-	private void UpdatePosition() {
+		bool isOn = GetComponent<Toggleable>().isOn;
+		if(isOn && !wasOn) {
+			wasOn = true;
+			turnedOn.Invoke();
+		}
+		Vector2 target = isOn ? (Vector2) onPosition.position : offPosition;
 		Transform t = GetComponent<Transform>();
-		Vector2 pos = Vector2.LerpUnclamped(offPosition, onPosition, moveProgress);
+		Vector2 pos = Vector2.MoveTowards(t.position, target, speed * Time.deltaTime);
 		t.position = new Vector3(pos.x, pos.y, t.position.z);
+		if((pos - target).sqrMagnitude < 0.0001f && wasOn && !isOn) {
+			wasOn = false;
+			turnedOff.Invoke();
+		}
 	}
 }
