@@ -14,9 +14,10 @@ public class Target : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		GameObject projectile = collision.gameObject;
-		if(projectile.tag == "Projectile") {
+		Projectile projectileComponent = projectile.GetComponent<Projectile>();
+		if(projectileComponent != null) {
 			// Get the player that launched the projectile.
-			ComputerControls launcher = projectile.GetComponent<Projectile>().launcher;
+			ComputerControls launcher = projectileComponent.launcher;
 
 			// The projectile should stick, perfectly, to the target, and move
 			// with it. To accomplish this, simply destroy its own rigid body
@@ -40,7 +41,7 @@ public class Target : MonoBehaviour {
 			// Make the projectile no longer a projectile so that it doesn’t
 			// connect to a second target if this target moves close to the
 			// other.
-			projectile.tag = null;
+			Destroy(projectileComponent);
 
 			// Notify listeners.
 			onPlug.Invoke();
