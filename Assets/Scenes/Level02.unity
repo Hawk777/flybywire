@@ -1002,6 +1002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 594225601}
     m_Modifications:
+    - target: {fileID: 1693326702000228789, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1778806994842489377, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_Name
       value: Roomba (1)
@@ -5050,7 +5054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447048, guid: 6f61ae4a0eb872b47b34bbbb4f58a5e1, type: 3}
       propertyPath: cameraTargetPosition.x
-      value: 39
+      value: 48.5
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447048, guid: 6f61ae4a0eb872b47b34bbbb4f58a5e1, type: 3}
       propertyPath: cameraTargetPosition.y
@@ -5288,7 +5292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447094, guid: 6f61ae4a0eb872b47b34bbbb4f58a5e1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447094, guid: 6f61ae4a0eb872b47b34bbbb4f58a5e1, type: 3}
       propertyPath: m_LocalScale.y
