@@ -525,6 +525,10 @@ GameObject:
   - component: {fileID: 5948384554717744664}
   - component: {fileID: 6530066424096406602}
   - component: {fileID: 1416178981526571545}
+  - component: {fileID: 5085330173057002192}
+  - component: {fileID: 4504887061160886938}
+  - component: {fileID: 5194487333435918997}
+  - component: {fileID: 2854691923129908344}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -557,7 +561,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129568169247747737}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -601,6 +605,75 @@ PolygonCollider2D:
       - {x: -0.27164006, y: -0.61358196}
       - {x: 0.92692286, y: -0.6135818}
       - {x: 1.1924763, y: 0.113581985}
+--- !u!114 &5085330173057002192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129568169247747737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d1e619626c74d4e916d4a6c186ce24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4504887061160886938}
+        m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4504887061160886938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129568169247747737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f505b59d38ef280d48920b6a50c91e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 0
+  toggled:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5194487333435918997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129568169247747737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b4587cb2174e938aea2459a2979519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: {x: 0, y: 5}
+  moveTime: 5
+--- !u!114 &2854691923129908344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129568169247747737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db83f35a1d850ea51b327dd2569ebd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7369196012308169480
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4388248768038639798
 Transform:
   m_ObjectHideFlags: 0
@@ -679,7 +752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6729555470219813122
 Transform:
   m_ObjectHideFlags: 0

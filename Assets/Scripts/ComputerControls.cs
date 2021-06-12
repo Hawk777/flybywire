@@ -30,6 +30,8 @@ public class ComputerControls : MonoBehaviour {
 	private GameObject projectile;
 	[HideInInspector]
 	public SpringJoint2D spring;
+	[HideInInspector]
+	public Activatable activationTarget;
 
 	void Start() {
 		fireAction = GetComponent<PlayerInput>().actions["Fire"];
@@ -37,6 +39,12 @@ public class ComputerControls : MonoBehaviour {
 
 	void OnAim(InputValue inputValue) {
 		aim = Camera.main.ScreenToWorldPoint(inputValue.Get<Vector2>()) - GetComponent<Transform>().position;
+	}
+
+	void OnInteract() {
+		if(activationTarget != null) {
+			activationTarget.activated.Invoke();
+		}
 	}
 
 	void OnUnplug() {
@@ -48,6 +56,7 @@ public class ComputerControls : MonoBehaviour {
 			Destroy(spring);
 			spring = null;
 		}
+		activationTarget = null;
 	}
 
 	void OnReset() {
@@ -55,6 +64,10 @@ public class ComputerControls : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if(spring != null) {
+			spring.autoConfigureDistance = false;
+		}
+
 		bool firing = fireAction.phase == InputActionPhase.Started;
 		if(firing) {
 			if(projectile == null) {
@@ -68,7 +81,6 @@ public class ComputerControls : MonoBehaviour {
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
 				projectileBody.AddForce(Vector2.ClampMagnitude(aim * forceScale, forceMax), ForceMode2D.Impulse);
 			} else if(spring != null) {
-				spring.autoConfigureDistance = false;
 				float oldDist = spring.distance;
 				float newDist = Mathf.Max(oldDist - cableRetractSpeed, minCableLength);
 				spring.distance = newDist;
