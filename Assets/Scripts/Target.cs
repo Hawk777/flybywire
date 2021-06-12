@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Target : MonoBehaviour {
-	[Tooltip("Emitted when the machine is activated by the player.")]
-	public UnityEvent activated;
+	[Tooltip("Emitted when the machine is interacted with by the player.")]
+	public UnityEvent onInteract;
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		GameObject projectile = collision.gameObject;

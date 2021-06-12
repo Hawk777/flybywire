@@ -47,7 +47,7 @@ public class ComputerControls : MonoBehaviour {
 
 	void OnInteract() {
 		if(connectedTarget != null) {
-			connectedTarget.activated.Invoke();
+			connectedTarget.onInteract.Invoke();
 		}
 	}
 
