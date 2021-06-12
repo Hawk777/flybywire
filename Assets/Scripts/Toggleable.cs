@@ -14,7 +14,7 @@ public class Toggleable : MonoBehaviour {
 	[Tooltip("Emitted each time the state becomes off.")]
 	public UnityEvent turnedOff;
 
-	public void Activate() {
+	public void Interact() {
 		isOn = !isOn;
 		toggled.Invoke(isOn);
 		(isOn ? turnedOn : turnedOff).Invoke();
