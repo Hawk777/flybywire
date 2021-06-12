@@ -60,7 +60,10 @@ public class ComputerControls : MonoBehaviour {
 			Destroy(spring);
 			spring = null;
 		}
-		connectedTarget = null;
+		if(connectedTarget != null) {
+			connectedTarget.onUnplug.Invoke();
+			connectedTarget = null;
+		}
 	}
 
 	void OnReset() {
