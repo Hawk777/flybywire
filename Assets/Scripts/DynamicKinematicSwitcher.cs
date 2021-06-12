@@ -18,11 +18,11 @@ public class DynamicKinematicSwitcher : MonoBehaviour {
 	[Tooltip("The rotation threshold below which the object is considered upright.")]
 	public float rotationThreshold = 0.2f;
 
-	private static ContactPoint2D[] contactPoints = new ContactPoint2D[1];
+	private static Collider2D[] touchingColliders = new Collider2D[20];
 
 	void Update() {
 		Rigidbody2D body = GetComponent<Rigidbody2D>();
-		bool touchingFloor = floorCollider.GetContacts(contactPoints) != 0;
+		bool touchingFloor = TouchingFloor();
 		bool stoppedMoving = body.velocity.sqrMagnitude <= speedThreshold * speedThreshold;
 		bool stoppedRotating = Mathf.Abs(body.angularVelocity) <= angularSpeedThreshold;
 		bool upright = Mathf.Approximately(0f, Mathf.MoveTowardsAngle(body.rotation, 0f, rotationThreshold));
@@ -40,5 +40,30 @@ public class DynamicKinematicSwitcher : MonoBehaviour {
 			// could be caused by the kinematic driver.
 			body.bodyType = RigidbodyType2D.Dynamic;
 		}
+	}
+
+	private bool TouchingFloor() {
+		Rigidbody2D body = GetComponent<Rigidbody2D>();
+		ContactFilter2D filter = new ContactFilter2D();
+		filter.NoFilter();
+		int touchingCount = -1;
+		while(touchingCount == -1) {
+			touchingCount = floorCollider.OverlapCollider(filter, touchingColliders);
+			if(touchingCount == touchingColliders.Length) {
+				// Too many; enlarge array and try again.
+				touchingColliders = new Collider2D[touchingColliders.Length * 2];
+				touchingCount = -1;
+			}
+		}
+
+		// Only consider us to be touching the floor if one of the colliders is
+		// a solid object (i.e. not a trigger) and is not a piece of ourself.
+		for(int i = 0; i != touchingCount; ++i) {
+			Rigidbody2D touchingBody = touchingColliders[i].attachedRigidbody;
+			if(!touchingColliders[i].isTrigger && touchingBody != body) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
