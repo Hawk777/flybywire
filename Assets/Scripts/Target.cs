@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Target : MonoBehaviour {
+	[Tooltip("Emitted when the machine is activated by the player.")]
+	public UnityEvent activated;
+
 	void OnCollisionEnter2D(Collision2D collision) {
 		GameObject projectile = collision.gameObject;
 		if(projectile.tag == "Projectile") {
@@ -22,8 +26,8 @@ public class Target : MonoBehaviour {
 			spring.enableCollision = true;
 			launcher.spring = spring;
 
-			// Record the object that was hit, in case it is activatable.
-			launcher.activationTarget = GetComponent<Activatable>();
+			// Record the object that was hit.
+			launcher.connectedTarget = this;
 		}
 	}
 }

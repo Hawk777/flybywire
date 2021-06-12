@@ -35,7 +35,7 @@ public class ComputerControls : MonoBehaviour {
 	[HideInInspector]
 	public SpringJoint2D spring;
 	[HideInInspector]
-	public Activatable activationTarget;
+	public Target connectedTarget;
 
 	void Start() {
 		fireAction = GetComponent<PlayerInput>().actions["Fire"];
@@ -46,8 +46,8 @@ public class ComputerControls : MonoBehaviour {
 	}
 
 	void OnInteract() {
-		if(activationTarget != null) {
-			activationTarget.activated.Invoke();
+		if(connectedTarget != null) {
+			connectedTarget.activated.Invoke();
 		}
 	}
 
@@ -60,7 +60,7 @@ public class ComputerControls : MonoBehaviour {
 			Destroy(spring);
 			spring = null;
 		}
-		activationTarget = null;
+		connectedTarget = null;
 	}
 
 	void OnReset() {
