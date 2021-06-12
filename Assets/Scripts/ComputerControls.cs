@@ -83,7 +83,7 @@ public class ComputerControls : MonoBehaviour {
 				projectile.GetComponent<Projectile>().launcher = this;
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
 				Vector2 forceVector = Vector2.ClampMagnitude(aim * forceScale, forceMax);
-				if (forceVector.magnitude < forceMin) {
+				if (forceVector.sqrMagnitude < forceMin * forceMin) {
 					forceVector = forceVector.normalized * forceMin;
 				}
 				projectileBody.AddForce(forceVector, ForceMode2D.Impulse);
