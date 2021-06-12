@@ -34,7 +34,7 @@ public class FollowWithSmoothing : MonoBehaviour {
 
 		float oldSize = targetCamera.orthographicSize;
 		float newSize;
-		if ((targetSize - oldSize) <= jumpDist * jumpDist) {
+		if (Mathf.Abs(targetSize - oldSize) <= jumpDist) {
 			newSize = targetSize;
 		} else {
 			newSize = Mathf.Lerp(oldSize, targetSize, interpolation);
