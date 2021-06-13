@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cable: {fileID: 6151317668768558209}
-  ropePrefab: {fileID: 6428455909377971923, guid: a4cd089f1c136824b8217348c3a68b16, type: 3}
   launcher: {fileID: 0}
 --- !u!1 &7166708502375526796
 GameObject:

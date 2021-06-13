@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8935403aa41981f9b443db94893dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cableRenderer: {fileID: 0}
   length: 0
   springConstant: 100
   objects: []
+  offsets: []
+  z: 0
+  catenarySteps: 20

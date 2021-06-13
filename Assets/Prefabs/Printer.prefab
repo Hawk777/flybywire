@@ -120,6 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db83f35a1d850ea51b327dd2569ebd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 6428455909377971923, guid: a4cd089f1c136824b8217348c3a68b16, type: 3}
+  onPlug:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnplug:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3709354008792534345
 GameObject:
   m_ObjectHideFlags: 0
