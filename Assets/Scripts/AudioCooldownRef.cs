@@ -3,7 +3,7 @@ using UnityEngine;
 public class AudioCooldownRef : MonoBehaviour {
 	private AudioCooldown Instance {
 		get {
-			return GameObject.Find("AudioCooldown").GetComponent<AudioCooldown>();
+			return GameObject.Find("Audio Cooldown").GetComponent<AudioCooldown>();
 		}
 	}
 
