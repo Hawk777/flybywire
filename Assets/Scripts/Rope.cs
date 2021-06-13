@@ -19,6 +19,9 @@ public class Rope : MonoBehaviour {
 	[Tooltip("The Z coordinate of the cable.")]
 	public float z;
 
+	[Tooltip("The number of line segments to use to draw the catenary when the rope is slack.")]
+	public int catenarySteps;
+
 	public void InitLength() {
 		Vector2[] positions = Positions;
 		length = (positions[1] - positions[0]).magnitude;
@@ -50,9 +53,23 @@ public class Rope : MonoBehaviour {
 
 	private void Update() {
 		Vector2[] positions = Positions;
-		cableRenderer.SetPositions(new Vector3[]{
-			new Vector3(positions[0].x, positions[0].y, z),
-			new Vector3(positions[1].x, positions[1].y, z),
-		});
+		float actualLengthSq = (positions[1] - positions[0]).sqrMagnitude;
+		if(actualLengthSq >= length * length) {
+			// The rope is taut. Draw a straight line.
+			cableRenderer.positionCount = 2;
+			cableRenderer.SetPositions(new Vector3[]{
+				new Vector3(positions[0].x, positions[0].y, z),
+				new Vector3(positions[1].x, positions[1].y, z),
+			});
+		} else {
+			// The rope is loose. Draw a catenary.
+			Vector2[] catenary = Catenary.generate(positions[0], positions[1], length, catenarySteps);
+			Vector3[] catenary3 = new Vector3[catenary.Length];
+			for(int i = 0; i != catenary.Length; ++i) {
+				catenary3[i] = new Vector3(catenary[i].x, catenary[i].y, z);
+			}
+			cableRenderer.positionCount = catenary3.Length;
+			cableRenderer.SetPositions(catenary3);
+		}
 	}
 }
