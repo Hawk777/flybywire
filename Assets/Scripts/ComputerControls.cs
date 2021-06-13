@@ -101,15 +101,17 @@ public class ComputerControls : MonoBehaviour {
 		bool firing = fireAction.phase == InputActionPhase.Started;
 		if(firing) {
 			if(projectile == null) {
+				Vector2 aim = Aim;
 				Transform t = GetComponent<Transform>();
-				projectile = Instantiate(projectilePrefab, t.position, t.rotation, t.parent);
+				float rot = Vector2.Angle(Vector2.right, aim);
+				projectile = Instantiate(projectilePrefab, t.position, Quaternion.Euler(0f, 0f, rot), t.parent);
 				Rigidbody2D myBody = GetComponent<Rigidbody2D>();
 				Rigidbody2D projectileBody = projectile.GetComponent<Rigidbody2D>();
 				projectileBody.velocity = myBody.velocity;
 				projectileBody.angularVelocity = myBody.angularVelocity;
 				projectile.GetComponent<Projectile>().launcher = this;
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
-				Vector2 forceVector = Aim * forceScale;
+				Vector2 forceVector = aim * forceScale;
 				if (forceVector.sqrMagnitude < forceMin * forceMin) {
 					forceVector = forceVector.normalized * forceMin;
 				}
