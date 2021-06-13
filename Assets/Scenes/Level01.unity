@@ -4557,14 +4557,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'While joined:
-
-    R-Mouse: Unjoin
+  m_Text: 'While connected:
 
     L-Mouse: Pull
 
-    Space: Turn
-    on/off'
+    R-Mouse: Disconnect
+
+    [Space]:
+    Turn on/off'
 --- !u!222 &1333900420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5427,9 +5427,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'R: Reset
+  m_Text: '[R]: Reset
 
-    L-Mouse: Join'
+    L-Mouse: Connect'
 --- !u!222 &1874436641
 CanvasRenderer:
   m_ObjectHideFlags: 0
