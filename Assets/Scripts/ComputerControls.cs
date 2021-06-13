@@ -29,7 +29,7 @@ public class ComputerControls : MonoBehaviour {
 	private Vector2 lastAimScreen, lastAimAbsolute;
 	private GameObject projectile;
 	[HideInInspector]
-	public SpringJoint2D spring;
+	public Rope rope;
 	[HideInInspector]
 	public Target connectedTarget;
 
@@ -83,9 +83,9 @@ public class ComputerControls : MonoBehaviour {
 			Destroy(projectile);
 			projectile = null;
 		}
-		if(spring != null) {
-			Destroy(spring);
-			spring = null;
+		if(rope != null) {
+			Destroy(rope.gameObject);
+			rope = null;
 		}
 		if(connectedTarget != null) {
 			connectedTarget.onUnplug.Invoke();
@@ -116,11 +116,12 @@ public class ComputerControls : MonoBehaviour {
 					forceVector = forceVector.normalized * forceMin;
 				}
 				projectileBody.AddForce(forceVector, ForceMode2D.Impulse);
-			} else if(spring != null) {
-				float oldDist = spring.distance;
+			} else if(rope != null) {
+				float oldDist = rope.length;
 				float newDist = Mathf.Max(oldDist - cableRetractSpeed, minCableLength);
-				spring.distance = newDist;
+				rope.length = newDist;
 				GetComponent<Rigidbody2D>().WakeUp();
+				connectedTarget.GetComponent<Rigidbody2D>().WakeUp();
 			}
 		}
 	}
