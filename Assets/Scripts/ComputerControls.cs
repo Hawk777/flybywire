@@ -26,37 +26,50 @@ public class ComputerControls : MonoBehaviour {
 
 	private InputAction fireAction;
 
-	private Vector2 aim;
+	private Vector2 lastAimScreen, lastAimAbsolute;
 	private GameObject projectile;
 	[HideInInspector]
 	public SpringJoint2D spring;
 	[HideInInspector]
 	public Target connectedTarget;
 
+	private Vector2 Aim {
+		get {
+			if(lastAimScreen != null) {
+				// Get the distance from the computer to the mouse pointer.
+				Camera cam = Camera.main;
+				Vector2 worldDistance = cam.ScreenToWorldPoint(lastAimScreen) - GetComponent<Transform>().position;
+
+				// Scale so that camera zoom does not affect the vector length;
+				// putting the mouse at the top of the screen while the
+				// computer is in the exact middle will result in a vector of
+				// length 1 no matter the camera zoom level.
+				Vector2 scaled = worldDistance / cam.orthographicSize;
+
+				// The aim vector could still be of magnitude >1 for a two
+				// reasons: (1) the computer isn’t in the exact middle of the
+				// screen, or (2) the player is aiming left or right, and their
+				// screen is wider than it is high. To accommodate those cases,
+				// clamp.
+				return Vector2.ClampMagnitude(scaled, 1f);
+			} else if(lastAimAbsolute != null) {
+				return lastAimAbsolute;
+			} else {
+				return Vector2.zero;
+			}
+		}
+	}
+
 	void Start() {
 		fireAction = GetComponent<PlayerInput>().actions["Fire"];
 	}
 
 	void OnAimScreen(InputValue inputValue) {
-		// Get the distance from the computer to the mouse pointer.
-		Camera cam = Camera.main;
-		Vector2 worldDistance = cam.ScreenToWorldPoint(inputValue.Get<Vector2>()) - GetComponent<Transform>().position;
-
-		// Scale so that camera zoom does not affect the vector length; putting
-		// the mouse at the top of the screen while the computer is in the
-		// exact middle will result in a vector of length 1 no matter the
-		// camera zoom level.
-		Vector2 scaled = worldDistance / cam.orthographicSize;
-
-		// The aim vector could still be of magnitude >1 for a two reasons: (1)
-		// the computer isn’t in the exact middle of the screen, or (2) the
-		// player is aiming left or right, and their screen is wider than it is
-		// high. To accommodate those cases, clamp.
-		aim = Vector2.ClampMagnitude(scaled, 1f);
+		lastAimScreen = inputValue.Get<Vector2>();
 	}
 
 	void OnAimAbsolute(InputValue inputValue) {
-		aim = inputValue.Get<Vector2>();
+		lastAimAbsolute = inputValue.Get<Vector2>();
 	}
 
 	void OnInteract() {
@@ -96,7 +109,7 @@ public class ComputerControls : MonoBehaviour {
 				projectileBody.angularVelocity = myBody.angularVelocity;
 				projectile.GetComponent<Projectile>().launcher = this;
 				Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectile.GetComponent<Collider2D>());
-				Vector2 forceVector = aim * forceScale;
+				Vector2 forceVector = Aim * forceScale;
 				if (forceVector.sqrMagnitude < forceMin * forceMin) {
 					forceVector = forceVector.normalized * forceMin;
 				}
