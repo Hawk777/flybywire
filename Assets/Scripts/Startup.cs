@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Startup : MonoBehaviour {
 	private const string rootScene = "Root";
-	private const string firstLevel = "Level01";
+	private const string firstLevel = "Title";
 	private GameObject rootCamera;
 	private bool loadInProgress = false;
 
