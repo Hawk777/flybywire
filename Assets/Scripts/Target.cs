@@ -27,18 +27,30 @@ public class Target : MonoBehaviour {
 			// the same frame, it might not be, and we only want to plug into
 			// the first target.
 			if(launcher.connectedTarget == null) {
+				Transform projectileTransform = projectile.GetComponent<Transform>();
+
 				// The projectile should stick, perfectly, to the target, and
 				// move with it. To accomplish this, simply destroy its own
 				// rigid body and make it a child object of the target.
 				Destroy(projectile.GetComponent<Rigidbody2D>());
-				projectile.GetComponent<Transform>().SetParent(GetComponent<Transform>(), true);
+				projectileTransform.SetParent(GetComponent<Transform>(), true);
 
 				// Create the cable between the target and the projectile.
 				Rope rope = Instantiate(ropePrefab).GetComponent<Rope>();
+				rope.cableRenderer = projectileComponent.cable;
+				projectileComponent.cable = null;
 				Rigidbody2D body = GetComponent<Rigidbody2D>();
 				Rigidbody2D launcherBody = launcher.GetComponent<Rigidbody2D>();
-				rope.objects = new Rigidbody2D[]{body, launcherBody};
-				rope.length = (launcherBody.position - body.position).magnitude;
+				rope.objects = new Rigidbody2D[]{
+					body,
+					launcherBody,
+				};
+				rope.offsets = new Vector2[]{
+					body.GetPoint(projectileTransform.position),
+					Vector2.zero,
+				};
+				rope.InitLength();
+				rope.z = projectileTransform.position.z;
 				launcher.rope = rope;
 
 				// Record the object that was hit.
