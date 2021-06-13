@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3653154319123447094}
   - component: {fileID: 3653154319123447049}
-  - component: {fileID: 6642628813103015433}
+  - component: {fileID: 5946392912037857390}
   m_Layer: 0
   m_Name: DeathCollider
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6642628813103015433
+--- !u!114 &5946392912037857390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3653154319123447051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02b9bd31f848a14db0335f64dc695ab, type: 3}
+  m_Script: {fileID: 11500000, guid: df8e5f6c19f874c35beed0f1d464b2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objects: []

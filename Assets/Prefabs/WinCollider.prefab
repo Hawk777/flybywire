@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3653154319123447094}
   - component: {fileID: 3653154319123447049}
-  - component: {fileID: 7227552059034085283}
+  - component: {fileID: 161472914108440110}
   m_Layer: 0
   m_Name: WinCollider
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7227552059034085283
+--- !u!114 &161472914108440110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3653154319123447051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93279ae8be368b748b9170e2a6861eae, type: 3}
+  m_Script: {fileID: 11500000, guid: df8e5f6c19f874c35beed0f1d464b2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objects: []
