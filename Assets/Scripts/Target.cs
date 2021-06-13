@@ -31,14 +31,12 @@ public class Target : MonoBehaviour {
 				projectile.GetComponent<Transform>().SetParent(GetComponent<Transform>(), true);
 
 				// Create the cable between the target and the projectile.
-				SpringJoint2D spring = gameObject.AddComponent<SpringJoint2D>();
-				spring.autoConfigureDistance = true;
-				spring.dampingRatio = 0f;
-				spring.frequency = 1f;
-				spring.connectedBody = launcher.GetComponent<Rigidbody2D>();
-				spring.enableCollision = true;
-				spring.autoConfigureDistance = false;
-				launcher.spring = spring;
+				Rope rope = Instantiate(projectileComponent.ropePrefab).GetComponent<Rope>();
+				Rigidbody2D body = GetComponent<Rigidbody2D>();
+				Rigidbody2D launcherBody = launcher.GetComponent<Rigidbody2D>();
+				rope.objects = new Rigidbody2D[]{body, launcherBody};
+				rope.length = (launcherBody.position - body.position).magnitude;
+				launcher.rope = rope;
 
 				// Record the object that was hit.
 				launcher.connectedTarget = this;
