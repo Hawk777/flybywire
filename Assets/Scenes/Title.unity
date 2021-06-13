@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 469780587}
   - component: {fileID: 469780586}
   - component: {fileID: 469780585}
+  - component: {fileID: 469780588}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -545,9 +546,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 20c33f122a4bf2d47adcb5c800506639, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 20c33f122a4bf2d47adcb5c800506639, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 14419249b0d42694b9bd9a8552675bb0, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 14419249b0d42694b9bd9a8552675bb0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -563,6 +564,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1127694077}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 469780588}
+        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
+        m_MethodName: OnButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -610,6 +623,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469780583}
   m_CullTransparentMesh: 1
+--- !u!114 &469780588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469780583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1669b945906bb4a801b73bddbab4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127694075
 GameObject:
   m_ObjectHideFlags: 0
