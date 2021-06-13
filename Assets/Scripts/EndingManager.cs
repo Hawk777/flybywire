@@ -6,16 +6,12 @@ using UnityEngine;
 public class EndingManager : MonoBehaviour {
 	enum State { BOXES, BOXES_DISAPPEAR, ROCKET, LAUNCH }
 
-	public GameObject creditsTextObject;
-
 	private EndingBox[] boxes;
 	private EndingRocket rocket;
 
 	private State state = State.BOXES;
 
 	private void Start() {
-		creditsTextObject.SetActive(false);
-
 		boxes = GetComponentsInChildren<EndingBox>();
 		rocket = GetComponentInChildren<EndingRocket>();
 		rocket.gameObject.SetActive(false);
@@ -45,9 +41,6 @@ public class EndingManager : MonoBehaviour {
 				break;
 			case State.ROCKET:
 				if (rocket.isActive) {
-					if (creditsTextObject) {
-						creditsTextObject.SetActive(true);
-					}
 					state = State.LAUNCH;
 				}
 				break;
