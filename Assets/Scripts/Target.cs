@@ -43,11 +43,6 @@ public class Target : MonoBehaviour {
 				// Record the object that was hit.
 				launcher.connectedTarget = this;
 
-				// Make the projectile no longer a projectile so that it
-				// doesn’t connect to a second target if this target moves
-				// close to the other.
-				Destroy(projectileComponent);
-
 				// Notify listeners.
 				onPlug.Invoke();
 			}

@@ -100,7 +100,7 @@ public class ComputerControls : MonoBehaviour {
 	void FixedUpdate() {
 		bool firing = fireAction.phase == InputActionPhase.Started;
 		if(firing) {
-			if(projectile == null) {
+			if(projectile == null && connectedTarget == null) {
 				Vector2 aim = Aim;
 				Transform t = GetComponent<Transform>();
 				float rot = Vector2.Angle(Vector2.right, aim);
