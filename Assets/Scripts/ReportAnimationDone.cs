@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ReportCombineDone : MonoBehaviour {
+public class ReportAnimationDone : MonoBehaviour {
 	[Tooltip("Emitted when the AnimationDone animation event occurs.")]
 	public UnityEvent onCombineDone;
 
