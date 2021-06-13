@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Transform))]
 public class ComputerControls : MonoBehaviour {
-	[Range(0.0001f, 10.0f)]
+	[Range(0.0001f, 1000.0f)]
 	[Tooltip("The scaling factor from aiming vector (which is magnitude ≤1) to force applied.")]
 	public float forceScale = 1.0f;
 

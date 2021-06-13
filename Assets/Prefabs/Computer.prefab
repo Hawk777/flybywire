@@ -386,12 +386,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3ccac1d5c8674498c3db6ddb71e999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceScale: 0.16
-  forceMin: 0.05
+  forceScale: 16
+  forceMin: 5
   projectilePrefab: {fileID: 5781545284822294043, guid: 34a4c03a33dcf1d7891f2ac87185c819, type: 3}
   minCableLength: 1
   cableRetractSpeed: 0.1
-  spring: {fileID: 0}
+  rope: {fileID: 0}
   connectedTarget: {fileID: 0}
 --- !u!1 &4993114153045454582
 GameObject:
