@@ -24,6 +24,12 @@ public class ComputerControls : MonoBehaviour {
 	[Tooltip("The length of cable to pull in per tick when retracting.")]
 	public float cableRetractSpeed = 0.1f;
 
+	[Tooltip("The audio source to play when the connector plugs in.")]
+	public AudioSource plugSound;
+
+	[Tooltip("The audio source to play when the connector unplugs.")]
+	public AudioSource unplugSound;
+
 	private InputAction fireAction;
 
 	private Vector2 lastAimScreen, lastAimAbsolute;
@@ -90,6 +96,7 @@ public class ComputerControls : MonoBehaviour {
 		if(connectedTarget != null) {
 			connectedTarget.onUnplug.Invoke();
 			connectedTarget = null;
+			unplugSound.Play();
 		}
 	}
 

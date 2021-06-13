@@ -53,6 +53,9 @@ public class Target : MonoBehaviour {
 				rope.z = projectileTransform.position.z;
 				launcher.rope = rope;
 
+				// Play the plug-in sound.
+				launcher.plugSound.Play();
+
 				// Record the object that was hit.
 				launcher.connectedTarget = this;
 
