@@ -9,6 +9,9 @@ public class CameraCollider : MonoBehaviour {
 	[Tooltip("New camera size")]
 	public float cameraTargetSize = 10f;
 
+	[Tooltip("Object to follow")]
+	public GameObject targetObject = null;
+
 	private Camera targetCamera;
 	private FollowWithSmoothing targetSmoothing;
 
@@ -21,7 +24,11 @@ public class CameraCollider : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Player") {
 			if (targetSmoothing) {
-				targetSmoothing.SetNewTarget(cameraTargetPosition, cameraTargetSize);
+				if (targetObject) {
+					targetSmoothing.SetNewTarget(targetObject, cameraTargetSize);
+				} else {
+					targetSmoothing.SetNewTarget(cameraTargetPosition, cameraTargetSize);
+				}
 			} else {
 				targetCamera.transform.position = cameraTargetPosition;
 				targetCamera.orthographicSize = cameraTargetSize;

@@ -11,6 +11,7 @@ public class FollowWithSmoothing : MonoBehaviour {
 	private Camera targetCamera;
 	private Vector3 targetPosition;
 	private float targetSize;
+	private GameObject targetObject = null;
 
 	void Start() {
 		targetCamera = GetComponentInChildren<Camera>();
@@ -23,7 +24,7 @@ public class FollowWithSmoothing : MonoBehaviour {
 
 		Transform me = GetComponent<Transform>();
 		Vector2 oldPos = me.position;
-		Vector2 targetPos = targetPosition;
+		Vector2 targetPos = targetObject? targetObject.transform.position : targetPosition;
 		Vector2 newPos;
 		if((targetPos - oldPos).sqrMagnitude <= jumpDist * jumpDist) {
 			newPos = targetPos;
@@ -43,7 +44,13 @@ public class FollowWithSmoothing : MonoBehaviour {
 	}
 
 	public void SetNewTarget(Vector3 newTargetPosition, float newTargetSize) {
+		targetObject = null;
 		targetPosition = newTargetPosition;
+		targetSize = newTargetSize;
+	}
+
+	public void SetNewTarget(GameObject newTargetObject, float newTargetSize) {
+		targetObject = newTargetObject;
 		targetSize = newTargetSize;
 	}
 }
