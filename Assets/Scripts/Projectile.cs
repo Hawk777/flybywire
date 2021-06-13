@@ -4,9 +4,6 @@ public class Projectile : MonoBehaviour {
 	[Tooltip("The cable part of the projectile.")]
 	public LineRenderer cable;
 
-	[Tooltip("The prefab rope to instantiate upon hitting a target.")]
-	public GameObject ropePrefab;
-
 	[HideInInspector]
 	public ComputerControls launcher;
 

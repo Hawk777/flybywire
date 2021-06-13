@@ -3,6 +3,9 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Target : MonoBehaviour {
+	[Tooltip("The prefab rope to instantiate when a projectile hits the target.")]
+	public GameObject ropePrefab;
+
 	[Tooltip("Emitted when the machine is plugged into by the player.")]
 	public UnityEvent onPlug;
 
@@ -31,7 +34,7 @@ public class Target : MonoBehaviour {
 				projectile.GetComponent<Transform>().SetParent(GetComponent<Transform>(), true);
 
 				// Create the cable between the target and the projectile.
-				Rope rope = Instantiate(projectileComponent.ropePrefab).GetComponent<Rope>();
+				Rope rope = Instantiate(ropePrefab).GetComponent<Rope>();
 				Rigidbody2D body = GetComponent<Rigidbody2D>();
 				Rigidbody2D launcherBody = launcher.GetComponent<Rigidbody2D>();
 				rope.objects = new Rigidbody2D[]{body, launcherBody};
