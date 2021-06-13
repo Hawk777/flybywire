@@ -863,6 +863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 594225601}
     m_Modifications:
+    - target: {fileID: 1096530447471258096, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1778806994842489377, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_Name
       value: Roomba
@@ -1002,13 +1006,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 594225601}
     m_Modifications:
+    - target: {fileID: 1096530447471258096, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1693326702000228789, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1778806994842489377, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_Name
       value: Roomba (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079221408287350186, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5422261024504565414, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_RootOrder
@@ -2410,9 +2422,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 594225601}
     m_Modifications:
+    - target: {fileID: 1096530447471258096, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693326702000228789, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1778806994842489377, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_Name
       value: Roomba (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079221408287350186, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5422261024504565414, guid: 9acf04f86ac5a634d8122321d243c85a, type: 3}
       propertyPath: m_RootOrder
@@ -4212,7 +4236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451498775536524212, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17
+      value: -17.95
       objectReference: {fileID: 0}
     - target: {fileID: 4451498775536524212, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
       propertyPath: m_LocalPosition.z
