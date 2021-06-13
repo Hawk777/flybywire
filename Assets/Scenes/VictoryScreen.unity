@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket Particle System (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6756256978222709486, guid: 2a6ccf813ce26544b9bffdd389800dd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8885628464537890060, guid: 2a6ccf813ce26544b9bffdd389800dd9, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 1
@@ -1352,6 +1356,10 @@ PrefabInstance:
     - target: {fileID: 6756256978222709486, guid: 2a6ccf813ce26544b9bffdd389800dd9, type: 3}
       propertyPath: m_Name
       value: Rocket Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756256978222709486, guid: 2a6ccf813ce26544b9bffdd389800dd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8885628464537890060, guid: 2a6ccf813ce26544b9bffdd389800dd9, type: 3}
       propertyPath: InitialModule.startSpeed.scalar

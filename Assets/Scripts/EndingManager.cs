@@ -34,9 +34,6 @@ public class EndingManager : MonoBehaviour {
 						break;
 					}
 				}
-				foreach (ParticleSystem rocket in rockets) {
-					rocket.gameObject.SetActive(false);
-				}
 
 				if (allBoxesAreOpen) {
 					state = State.BOXES_DISAPPEAR;
