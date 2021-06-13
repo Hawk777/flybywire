@@ -1693,7 +1693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1704,6 +1704,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1066905311}
@@ -1712,11 +1716,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 942547694}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1295940373}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
@@ -1728,12 +1740,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -1744,11 +1764,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 161472914108440110, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3653154319123447051, guid: 9901f92ccd46c64478a3c132cd15b3a3, type: 3}
@@ -64023,6 +64055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
+--- !u!95 &1295940373 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2669608451953316915, guid: a3daa266ad179af4dac4c1d257414582, type: 3}
+  m_PrefabInstance: {fileID: 1295940372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1379061791
 GameObject:
   m_ObjectHideFlags: 0
