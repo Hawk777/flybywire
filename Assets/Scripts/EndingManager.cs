@@ -6,7 +6,6 @@ using UnityEngine;
 public class EndingManager : MonoBehaviour {
 	enum State { BOXES, BOXES_DISAPPEAR, ROCKET, LAUNCH }
 
-	public ParticleSystem starParticleSystem;
 	public GameObject creditsTextObject;
 
 	private EndingBox[] boxes;
@@ -15,7 +14,6 @@ public class EndingManager : MonoBehaviour {
 	private State state = State.BOXES;
 
 	private void Start() {
-		starParticleSystem.gameObject.SetActive(false);
 		creditsTextObject.SetActive(false);
 
 		boxes = GetComponentsInChildren<EndingBox>();
@@ -47,9 +45,6 @@ public class EndingManager : MonoBehaviour {
 				break;
 			case State.ROCKET:
 				if (rocket.isActive) {
-					if (starParticleSystem) {
-						starParticleSystem.gameObject.SetActive(true);
-					}
 					if (creditsTextObject) {
 						creditsTextObject.SetActive(true);
 					}

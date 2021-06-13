@@ -307,6 +307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Star Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 2940554271352800005, guid: 14b0a3034f9820843a7ec3ce554a3e81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2940554271352800007, guid: 14b0a3034f9820843a7ec3ce554a3e81, type: 3}
       propertyPath: prewarm
       value: 0
@@ -357,6 +361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b0a3034f9820843a7ec3ce554a3e81, type: 3}
+--- !u!1 &727746468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2940554271352800005, guid: 14b0a3034f9820843a7ec3ce554a3e81, type: 3}
+  m_PrefabInstance: {fileID: 518942625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &893099374
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +606,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 727746468}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1251149453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,11 +656,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251149449}
   m_CullTransparentMesh: 1
---- !u!198 &1334524443 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2940554271352800007, guid: 14b0a3034f9820843a7ec3ce554a3e81, type: 3}
-  m_PrefabInstance: {fileID: 518942625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1369482840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28feaca466249084f83c4ba30698d66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starParticleSystem: {fileID: 1334524443}
   creditsTextObject: {fileID: 1369482840}
 --- !u!1 &1975767224
 GameObject:
