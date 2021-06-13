@@ -7,6 +7,7 @@ public class EndingManager : MonoBehaviour {
 	enum State { BOXES, BOXES_DISAPPEAR, ROCKET, LAUNCH }
 
 	public ParticleSystem starParticleSystem;
+	public ParticleSystem[] rockets;
 	public GameObject creditsTextObject;
 
 	private EndingBox[] boxes;
@@ -33,6 +34,9 @@ public class EndingManager : MonoBehaviour {
 						break;
 					}
 				}
+				foreach (ParticleSystem rocket in rockets) {
+					rocket.gameObject.SetActive(false);
+				}
 
 				if (allBoxesAreOpen) {
 					state = State.BOXES_DISAPPEAR;
@@ -52,6 +56,9 @@ public class EndingManager : MonoBehaviour {
 					}
 					if (creditsTextObject) {
 						creditsTextObject.SetActive(true);
+					}
+					foreach (ParticleSystem rocket in rockets) {
+						rocket.gameObject.SetActive(true);
 					}
 					state = State.LAUNCH;
 				}
