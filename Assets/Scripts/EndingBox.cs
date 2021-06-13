@@ -6,6 +6,5 @@ public class EndingBox : MonoBehaviour {
 
 	public void OnButtonClicked() {
 		isOpen = true;
-		GetComponent<Button>().interactable = false;
 	}
 }
