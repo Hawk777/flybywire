@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EndingManager : MonoBehaviour {
 	enum State { BOXES, BOXES_DISAPPEAR, ROCKET, LAUNCH }
 
 	public ParticleSystem starParticleSystem;
+	public GameObject creditsTextObject;
 
 	private EndingBox[] boxes;
 	private EndingRocket rocket;
+
 	private State state = State.BOXES;
 
 	private void Start() {
 		starParticleSystem.gameObject.SetActive(false);
+		creditsTextObject.SetActive(false);
 
 		boxes = GetComponentsInChildren<EndingBox>();
 		rocket = GetComponentInChildren<EndingRocket>();
@@ -45,6 +49,9 @@ public class EndingManager : MonoBehaviour {
 				if (rocket.isActive) {
 					if (starParticleSystem) {
 						starParticleSystem.gameObject.SetActive(true);
+					}
+					if (creditsTextObject) {
+						creditsTextObject.SetActive(true);
 					}
 					state = State.LAUNCH;
 				}
