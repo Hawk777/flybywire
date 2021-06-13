@@ -5577,7 +5577,7 @@ GameObject:
   - component: {fileID: 1989536833}
   - component: {fileID: 1989536832}
   - component: {fileID: 1989536831}
-  - component: {fileID: 1989536835}
+  - component: {fileID: 1989536834}
   m_Layer: 5
   m_Name: SoundButton
   m_TagString: Untagged
@@ -5648,9 +5648,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1989536835}
-        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: OnButtonClicked
+      - m_Target: {fileID: 1989536834}
+        m_TargetAssemblyTypeName: Toggleable, Assembly-CSharp
+        m_MethodName: Interact
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5698,7 +5698,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989536829}
   m_CullTransparentMesh: 1
---- !u!114 &1989536835
+--- !u!114 &1989536834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5707,9 +5707,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989536829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4da5856f0953e4197b602dc9ab59d9, type: 3}
+  m_Script: {fileID: 11500000, guid: f505b59d38ef280d48920b6a50c91e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 1
-  onSprite: {fileID: 21300000, guid: 428ab3951c0b7a9409871eef16d59077, type: 3}
-  offSprite: {fileID: 21300000, guid: 8dd7937e52953ef42a0fd79e4065107d, type: 3}
+  toggled:
+    m_PersistentCalls:
+      m_Calls: []
+  turnedOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1989536832}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 428ab3951c0b7a9409871eef16d59077, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  turnedOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1989536832}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 8dd7937e52953ef42a0fd79e4065107d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
