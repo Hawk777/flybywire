@@ -1,12 +1,10 @@
-using UnityEngine;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.EventSystems;
+using UnityEngine;
 
 // Thanks to James O’Hare for the 3D catenary calculation code at
 // <https://gist.github.com/Farfarer/a765cd07920d48a8713a0c1924db6d70>. I
-// modified that work to change the calculation from 3D to 2D.
+// modified that work to change the calculation from 3D to 2D and extract it
+// into a stateless calculation function.
 public class Catenary {
 	public static Vector2[] generate(Vector2 start, Vector2 end, float length, int steps) {
 		float lineDist = Vector2.Distance(end, start);
