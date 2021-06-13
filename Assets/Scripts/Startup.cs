@@ -77,5 +77,6 @@ public class Startup : MonoBehaviour {
 
 		// Done loading!
 		loadInProgress = false;
+		Time.timeScale = 1f;
     }
 }
