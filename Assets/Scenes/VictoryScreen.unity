@@ -535,7 +535,6 @@ GameObject:
   m_Component:
   - component: {fileID: 616173100}
   - component: {fileID: 616173099}
-  - component: {fileID: 616173098}
   m_Layer: 0
   m_Name: Ending fanfare
   m_TagString: Untagged
@@ -543,33 +542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &616173098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616173097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff0f09a064a7aea58d704877827d6a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDone:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartupRef, Assembly-CSharp
-        m_MethodName: StartLoad
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level01
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &616173099
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1163,6 +1135,7 @@ GameObject:
   - component: {fileID: 1388299937}
   - component: {fileID: 1388299936}
   - component: {fileID: 1388299940}
+  - component: {fileID: 1388299939}
   m_Layer: 5
   m_Name: HelmetBoxButton
   m_TagString: Untagged
@@ -1319,6 +1292,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388299934}
   m_CullTransparentMesh: 1
+--- !u!114 &1388299939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388299934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c31ed538a3b92269ba4ccdd37fa4ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCombineDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 219218865}
+        m_TargetAssemblyTypeName: Counter, Assembly-CSharp
+        m_MethodName: Increment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1388299940
 Animator:
   serializedVersion: 3
@@ -1348,7 +1348,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1418485644}
   - component: {fileID: 1418485643}
-  - component: {fileID: 1418485642}
   m_Layer: 0
   m_Name: Box Open sound
   m_TagString: Untagged
@@ -1356,33 +1355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1418485642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418485641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff0f09a064a7aea58d704877827d6a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDone:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartupRef, Assembly-CSharp
-        m_MethodName: StartLoad
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level01
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &1418485643
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1503,7 +1475,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1463786480}
   - component: {fileID: 1463786479}
-  - component: {fileID: 1463786478}
   m_Layer: 0
   m_Name: Chip Switch sound
   m_TagString: Untagged
@@ -1511,33 +1482,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1463786478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463786477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff0f09a064a7aea58d704877827d6a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDone:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartupRef, Assembly-CSharp
-        m_MethodName: StartLoad
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level01
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &1463786479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1790,6 +1734,7 @@ GameObject:
   - component: {fileID: 1975767228}
   - component: {fileID: 1975767227}
   - component: {fileID: 1975767230}
+  - component: {fileID: 1975767226}
   m_Layer: 5
   m_Name: JetPackBoxButton
   m_TagString: Untagged
@@ -1816,6 +1761,33 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -40}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1975767226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975767224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c31ed538a3b92269ba4ccdd37fa4ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCombineDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 219218865}
+        m_TargetAssemblyTypeName: Counter, Assembly-CSharp
+        m_MethodName: Increment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1975767227
 MonoBehaviour:
   m_ObjectHideFlags: 0
