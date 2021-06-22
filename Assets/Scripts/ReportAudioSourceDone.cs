@@ -6,12 +6,13 @@ public class ReportAudioSourceDone : MonoBehaviour {
 	[Tooltip("Emitted when the audio source finishes playing.")]
 	public UnityEvent onDone;
 
+	private bool wasPlaying = false;
+
 	private void Update() {
 		AudioSource source = GetComponent<AudioSource>();
-		if(source.timeSamples != 0) {
-			if(!source.isPlaying || AudioListener.volume == 0f) {
-				onDone.Invoke();
-			}
+		if(wasPlaying && (!source.isPlaying || AudioListener.volume == 0f)) {
+			onDone.Invoke();
 		}
+		wasPlaying = source.isPlaying;
 	}
 }
